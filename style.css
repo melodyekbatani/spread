@@ -1,4 +1,42 @@
 :root {
+--spacing: 1rem;
 font-family: 'helvetica', sans-serif;
 font-size:2rem;
+}
+
+body {
+    padding:1rem;
+}
+
+h1 {
+    font-size: calc(2 * var(--spacing));
+    margin-block-start: 1rem;
+}
+
+p{
+    margin-top: 3rem;
+    font-size: calc(0.6 * var(--spacing));
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (width<320px) {
+    /* h1{
+        font-size: calc(1 * var(--spacing)); 
+    } */
+    :root{
+        font-size: 0.8rem;
+    }
+   
+}
+@media screen and (width>1000px) {
+    h1{
+        font-size: 5rem;
+        line-height: 90%;
+    }
+    
 }
