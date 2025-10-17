@@ -39,4 +39,16 @@ section{
         line-height: 90%;
     }
     
+    body::selection{
+        background-color: rgba(255, 0, 98, 0.5);
+        color: white;
+    }
+
+}
+
+@media print {
+
+    body{
+        color: rgb(35, 35, 35);
+    }
 }
