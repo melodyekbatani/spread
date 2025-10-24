@@ -2,6 +2,7 @@
   font-size: 62.5%; /* 62.5% of 16px = 10px */
   --bp-sm: 375px;
   --bp-large: 1280px;
+  font-family: "futura-pt", sans-serif;
 }
 
 *{
