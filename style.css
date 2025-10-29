@@ -245,16 +245,68 @@ span.outlink{
 
 footer{
   /* background-color: rgb(204, 204, 204); */
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
+  padding-inline: 3rem 5rem;
+  transform: rotate(-15deg) translateX(2rem);
+  margin-block-start: 5rem;
+}
+
+footer > p:first-child{
+  font-family: "Inktrap";
+  font-size: 4.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  padding-block-start: 2rem ;
+}
+
+footer > p:first-child::after{
+  content: "";
+  display: block;
+  width: 120vw;
+  height: 0.6rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-inline-start: -6rem;
+}
+
+footer > p:last-child{
+  font-family: "Inktrap";
+  font-size: 1.8rem;
+  line-height: 1.2;
+  position: relative;
+  padding-block-start: 2rem ;
+}
+footer > p:last-child::after{
+  content: "";
+  display: block;
+  width: 120vw;
+  height: 0.6rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-inline-start: -10rem;
 }
 
 footer > p {
   color: rgb(0, 0, 0);
   margin-inline: 1rem;
-  margin-block: 1.4rem;
   font-size: 1.6rem;
 }
-
+footer::after {
+  content: "";
+  display: block;
+  background-color: black;
+  height: 130%;
+  width: 0.6rem;
+  margin-inline-end: 1rem;
+  position:absolute;
+  top: 0;
+  right: 4rem;
+}
 
 
 
