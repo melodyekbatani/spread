@@ -446,18 +446,17 @@ footer::after {
 
   
   h1{
-    margin-block-start: 15rem;
-    display: block;
- 
+  margin-block-start: 15rem;
+  display: block;
   p:first-child{
   font-size: 8rem;
   align-content: left;
  }
+
  p:last-child{
-  /*transform: rotate(-90deg);*/
+  transform: rotate(-90deg)
  }
 
-  }
   }
   
 
@@ -467,9 +466,10 @@ header{
 }
 
 
-  .intro{
-    font-size: 3rem;
-  }
+.intro{
+  font-size: 3rem;
+  grid-column: 2/6;
+}
 
   h2{
     font-size: 3.6rem;
@@ -489,12 +489,24 @@ header{
     line-height: 1.4;
   }
   .menu {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: auto;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: auto;
   }
-
+  
+  /* White space beside the H2 */
+  h2::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    width: 100vw;
+    height: 200%;
+    top: 100;
+    left: -100%;
+  }
+}
   
 
 @media screen and (min-width: 1080px) {
@@ -520,8 +532,19 @@ header{
 }
   .menu {
   position: absolute;
-  top: 0rem;
-  left: 0rem;
+  top: 2rem;
+  left: 2rem;
   right: auto;
   }
-
+  /* White space beside the H2 */
+h2::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+  width: 100vw;
+  height: 200%;
+  top: 100;
+  left: -100%;
+}
+  
