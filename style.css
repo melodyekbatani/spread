@@ -287,10 +287,7 @@ h2 > .section-number::after {
   top: 0;
 }
 
-h2>span:first-child{
-  display: block;
-  position: relative;
-}
+
 
 
 h2 > span {
@@ -307,10 +304,22 @@ h2 > span::after {
   display: block;
   background-color: black;
   height: 0.4rem;
-  width: 180%;
+  width: 180vw;
   margin-block-start: 1rem;
   margin-inline-start: -10rem;
 }
+
+h2 > .section-number::after {
+  content: "";
+  display: block;
+  background-color: black;
+  height: 0.4rem;
+  width: 180vw;
+  margin-inline-start: -80vw;
+  position: absolute;
+  top: 0;
+}
+
 
 h2::after{
   content: "";
@@ -554,10 +563,92 @@ footer::after {
   left: 2rem;
   font-size: 1.8rem;
 }
-  
+
+section.bodytext {
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap: 0.8rem;
+  grid-column: 3/9;
+}
+
+h2{
+  display: flex;
+  flex-direction: row-reverse;
+  transform: rotate(-15deg) translateX(8rem);
+  justify-content: center;
+  align-items: center;
+  /* background-color: unset; */
+}
+
+/* white space beside */
+h2::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: -100%;
+}
+
+h2:after {
+  content:"";
+  display: none;
+}
+
+
+h2 > .section-number > div:first-child {
+  display: inline-block;
+  line-height: 1;
+  padding-block-start: 2rem;
+  height: fit-content;
+  font-size: 8rem;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+
+h2 > .section-number{
+  position: relative;
+  padding-block: 2rem;
+}
+
+h2 > .section-number::before {
+  content: "";
+  background-color: black;
+  width: 0.4rem;
+  height: 350%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+h2 > .section-number > div:nth-child(2) {
+  background-color: rgb(0, 0, 0);
+  flex-shrink: 0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%; 
+}
+
+h2>span {
+  display: block;
+  text-align: right;
+  position: relative;
+  padding-block-end: 1rem;
+}
+
+h2 > span::after {
+  margin-inline-start: -20rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 }
   
+
 
 @media screen and (min-width: 1080px) {
   
