@@ -471,7 +471,7 @@ header{
   grid-column: 2/6;
 }
 
-  h2{
+h2{
     font-size: 3.6rem;
     margin-block: 7rem 4rem;
   }
@@ -529,7 +529,7 @@ header{
     display: block;
     grid-column: 2/6;
 }
-}
+
   .menu {
   position: absolute;
   top: 2rem;
@@ -547,4 +547,5 @@ h2::before {
   top: 100;
   left: -100%;
 }
-  
+
+}
