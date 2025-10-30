@@ -125,7 +125,7 @@ input#menu-toggle {
   font-size: 2rem;
   font-family: "Inktrap", "Avenir Next", "futura-pt", sans-serif;
   padding-inline: 3rem 8rem;
-  padding-block: 15rem;
+  padding-block: 12rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
