@@ -7,10 +7,13 @@
 
 :root{
   font-size: 62.5%; /* 62.5% of 16px = 10px */
+  /* More on css variables here: https://developer.mozilla.org/en-US/docs/Web/CSS/var also in lecture 6 */
   --bp-sm: 375px;
   --bp-large: 1280px;
   font-family: "Avenir Next", "futura-pt", sans-serif;
+  /* We found overflow-x clip worked best for what we were trying to do here: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x and in advanced css lecture */
   overflow-x: clip !important;
+  /* We wanted to intergrate basic transitions to make the scrolling experience on our site smoother. We found this on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
   scroll-behavior: smooth;
 }
 
@@ -45,7 +48,7 @@ h1 > p:first-child{
   white-space: pre-line;
   text-transform: uppercase;
 }
-
+/* We built a system using pseudo-elements to insert structural lines within the layout. The ::after selector lets us add a line that visually cuts through the grid. https://developer.mozilla.org/en-US/docs/Web/CSS/::after#:~:text=%2F*%20properties%20*%2F%20%7D-,Description,quote%20marks%2C%20or%20other%20decoration */
 h1 > p:first-child::after{
   content: "";
   display: block;
@@ -91,7 +94,7 @@ header::after {
   position:absolute;
   top: 0;
 }
-
+/* We wanted to include toggle function for the menu button and found this on MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input */
 input#menu-toggle {
   display: none;
 }
@@ -723,3 +726,302 @@ footer::after {
 
 
 } 
+@media print {
+
+  h1{
+    margin-block-start: 1rem;
+    grid-column: 0/10;
+    
+  }
+
+  h1 > p:first-child{
+    font-size: clamp(6rem,10vw,10rem);
+    width: fit-content;
+    text-align: left;
+    position: relative;
+  }
+
+    h1 > p:first-child::before{
+    content: "";
+    display: none !important;
+  }
+
+  h1 > p:first-child::after{
+    content: "";
+    display: none;
+  }
+
+  h1 > p:nth-child(2){
+    /* Don‘t need it to automatically word wrap */
+    font-size: clamp(2.5rem,3vw,4rem);
+    transform: rotate(0deg) translateX(1rem) translateY(-2rem);
+    background-color: unset;
+  }
+
+  h1 > p:nth-child(2)::after{
+    content: "";
+    display: none !important;
+  }
+
+  article {
+  display: grid;
+  /* 1.6rem is margin-inline */
+  grid-template-columns:3rem repeat(8, 1fr) 3rem;
+  gap: 0.8rem;
+  }
+
+  header {
+    /* transform-origin: right top; */
+    transform: rotate(10deg) translateX(4rem) ;
+    position: relative;
+  }
+
+  header::after {
+  content: "";
+  display: none !important;
+}
+
+  div.date-author {
+    grid-column: 2/10;
+  }
+
+  .intro{
+  /* font-size: 3rem; */
+  grid-column: 2/10;
+  }
+
+  .menu {
+  display: none !important;
+}
+
+h2 {
+  font-family: Inktrap;
+  position: relative; 
+  transform: rotate(15deg) translateX(2rem);
+  background-color: white;
+  hyphens: auto;
+  z-index:2;
+  /* the white space on the top */
+  box-shadow: -5rem -8rem 0 2rem white; 
+
+}
+/* White space beside the H2 */
+h2::before {
+  content: "";
+  display:none !important;
+  background-color: white;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: -100%;
+}
+
+h2 > * {
+  padding-inline-start: 2rem;
+  padding-inline-end: 2rem;
+}
+
+h2 > .section-number {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+h2 > .section-number > div:first-child {
+  display: inline-block;
+  line-height: 1;
+  padding-block-start: 2rem;
+  height: fit-content;
+  font-size: 4.2rem;
+  position: relative;
+}
+
+
+h2 > .section-number > div:nth-child(2) {
+  background-color: rgb(0, 0, 0);
+  flex-shrink: 0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%; 
+}
+
+h2 > .section-number::after {
+  content: "";
+  display: none !important;
+  background-color: black;
+  height: 0rem;
+  width: 150%;
+  margin-inline-start: -10rem;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+
+
+
+h2 > span {
+  display: block;
+  line-height: 1.3;
+  font-size: 2.2rem; 
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+  text-underline-offset: 0.7rem;
+}
+
+h2 > span::after {
+  content: "";
+  display: none !important;
+  background-color: black;
+  height: 0rem;
+  width: 0rem;
+  margin-block-start: 1rem;
+  margin-inline-start: -10rem;
+}
+
+h2 > .section-number::after {
+  content: "";
+  display:none !important;
+  background-color: black;
+  height: 0rem;
+  width: 0rem;
+  margin-inline-start: -80vw;
+  position: absolute;
+  top: 0;
+}
+
+
+h2::after{
+  content: "";
+  display: none !important;
+  background-color: rgb(0, 0, 0);
+  height: 0rem;
+  width: 0rem;
+  margin-inline-end: 1rem;
+  position:absolute;
+  top: 0;
+}
+
+section.bodytext {
+  display: grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap: 0.8rem;
+  grid-column: 1/10;
+}
+
+section.bodytext > * {
+  grid-column: 1/10;
+  font-size: 1.8rem; 
+  line-height: 1.45;
+
+}
+
+section.bodytext > p { 
+  font-size: 1.8rem; 
+  line-height: 1.45;
+  margin-block: 1rem;
+
+}
+
+section.bodytext > p.quote {
+  display: block;
+  grid-column: 1/10;
+  font-size: 1.8rem; 
+  line-height: 1.45;
+  margin-block: 2rem 3rem;
+  padding-inline-start: 1rem;
+  /* border-left: 0.4rem solid black; */
+  /* text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.3em; */
+  border-left: 0.4rem solid black;
+  transform: rotate(5deg);
+}
+
+span.outlink{
+  display: none;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.3em;
+  transform: rotate(2deg);
+}
+
+span.noBreak
+{ white-space: nowrap; } 
+
+footer{
+  /* background-color: rgb(204, 204, 204); */
+  /* padding: 4rem 2rem; */
+  padding-inline: 3rem 5rem;
+  transform: rotate(-15deg) translateX(2rem);
+  margin-block-start: 5rem;
+}
+
+footer > p:first-child{
+  font-family: "Inktrap";
+  font-size: 4.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  padding-block-start: 2rem ;
+}
+
+footer > p:first-child::after{
+  content: "";
+  display: none;
+  width: 120vw;
+  height: 0.6rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-inline-start: -6rem;
+}
+
+footer > p:last-child{
+  font-family: "Inktrap";
+  font-size: 1.8rem;
+  line-height: 1.2;
+  position: relative;
+  padding-block-start: 2rem ;
+}
+footer > p:last-child::after{
+  content: "";
+  display: none;
+  width: 120vw;
+  height: 0.6rem;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-inline-start: -10rem;
+}
+
+footer > p {
+  color: rgb(0, 0, 0);
+  margin-inline: 1rem;
+  font-size: 1.6rem;
+}
+footer::after {
+  content: "";
+  display: none;
+  background-color: black;
+  height: 130%;
+  width: 0.6rem;
+  margin-inline-end: 1rem;
+  position:absolute;
+  top: 0;
+  right: 4rem;
+}
+/* To fix lines showing up in the print, I applied display none !important above to hide the lines from showing up, but this still left a white gap in the content. I referenced https://developer.mozilla.org/en-US/docs/Web/CSS/@media. We also tried targeting just the menu which seemed to have resolved the problem. */
+  .menu,
+  .menu-content,
+  .menu-content::before,
+  .menu-content::after,
+  header::after {
+    display: none !important;
+    content: none !important;
+  }
+}
