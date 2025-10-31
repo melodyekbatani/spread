@@ -122,9 +122,9 @@ input#menu-toggle {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 100vh;
-  right: 100vw;
-  font-size: 2rem;
+  top: 120vh;
+  right: 120vw;
+  font-size: clamp(1.8rem,4.2vw,3rem);
   font-family: "Inktrap", "Avenir Next", "futura-pt", sans-serif;
   padding-inline: 3rem 8rem;
   padding-block: 14rem;
@@ -135,7 +135,7 @@ input#menu-toggle {
   gap: 3rem;
   z-index: 3;
   transition: all 0.2s ease-in-out;
-  transform: rotate(10deg) translateX(5rem);
+  transform: rotate(5deg) translateX(5rem);
   background-color: unset;
 }
 
@@ -146,9 +146,9 @@ input#menu-toggle {
   z-index: -1;
   top: -10vh;      
   left: -30vw;    
-  width: 130vw;    
+  width: 134vw;    
   height: 120vh; 
-  transform: rotate(-10deg) translateX(-5rem);
+  transform: rotate(-5deg) translateX(-5rem);
   backdrop-filter: blur(1rem);
 }
 
@@ -157,7 +157,7 @@ input#menu-toggle {
   position: absolute;
   background-color: black;
   width: 0.6rem;
-  height: 130vh;
+  height: 140vh;
   margin-inline-end: 4rem;
   top:0
 }
@@ -178,15 +178,15 @@ input#menu-toggle {
   display: block;
   background-color: black;
   height: 0.4rem;
-  width: 150vw;
+  width: 200vw;
   margin-block: 1rem;
-  margin-inline-start: -15rem;
+  margin-inline-start: -40vw;
 }
 
 .menu-content > ul{
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem,8vw,5rem);
+  gap: clamp(2rem,8vw,6rem);
   line-height: 1.3;
   margin-inline-start: 2rem;
 }
@@ -198,9 +198,9 @@ input#menu-toggle {
   display: block;
   background-color: black;
   height: 0.4rem;
-  width: 150vw;
+  width: 180vw;
   margin-block: 1rem;
-  margin-inline-start: -15rem;
+  margin-inline-start: -30vw;
   position: absolute;
 }
 
@@ -216,7 +216,7 @@ input#menu-toggle {
 
 .intro{
   margin-block-start: 2.4rem;
-  font-size: clamp(2rem,2.5vw,5rem);
+  font-size: clamp(2rem,2.5vw,3rem);
   line-height: 1.3;
 }
 
@@ -238,6 +238,7 @@ h2 {
   z-index:2;
   /* the white space on the top */
   box-shadow: -5rem -8rem 0 2rem white; 
+  /* scroll-margin-top: 6rem;  */
 
 }
 /* White space beside the H2 */
@@ -295,8 +296,6 @@ h2 > .section-number::after {
 }
 
 
-
-
 h2 > span {
   display: block;
   line-height: 1.3;
@@ -352,7 +351,7 @@ section.bodytext > * {
 }
 
 section.bodytext > p { 
-  font-size: clamp(1.8rem,2.2vw,2.6rem); 
+  font-size: clamp(1.8rem,2.2vw,2.4rem); 
   line-height: 1.45;
   margin-block: 1rem;
 
@@ -388,14 +387,14 @@ footer{
   /* background-color: rgb(204, 204, 204); */
   /* padding: 4rem 2rem; */
   padding-inline: 3rem 5rem;
-  transform: rotate(-15deg) translateX(2rem);
+  transform: rotate(-10deg) translateX(2rem);
   margin-block-start: 18rem;
   position: relative;
 }
 
 footer > p:first-child{
   font-family: "Inktrap";
-  font-size: 4.5rem;
+  font-size: clamp(4.5rem,5vw,8rem);
   line-height: 1.2;
   text-transform: uppercase;
   position: relative;
@@ -416,7 +415,7 @@ footer > p:first-child::after{
 
 footer > p:last-child{
   font-family: "Inktrap";
-  font-size: 1.8rem;
+  font-size: clamp(2.2rem,2.2vw,3.4rem);
   line-height: 1.2;
   position: relative;
   padding-block-start: 2rem ;
@@ -443,7 +442,7 @@ footer::after {
   content: "";
   display: block;
   background-color: black;
-  height: 60vh;
+  height: 80vh;
   width: 0.6rem;
   margin-inline-end: 1rem;
   position:absolute;
@@ -552,7 +551,7 @@ footer::after {
   margin-inline-end: 1rem;
   position: absolute;
   top: 100%;
-  left: -12rem;
+  left: -12vw;
   }
 
   div.date-author {
@@ -572,6 +571,12 @@ footer::after {
 
   .menu-content {
     font-size: clamp(2rem,3vw,3rem);
+    transform: rotate(5deg) translateX(clamp(5rem,10vw,20rem));
+  }
+
+  .menu-content::before {
+    top: -15vh;      
+    left: -40vw;    
   }
 
   .menu-content > P{
@@ -583,9 +588,7 @@ footer::after {
     display: block;
     background-color: black;
     height: 0.4rem;
-    width: 150vw;
     margin-block: 1rem;
-    margin-inline-start: -15rem;
   }
 
   .menu-content > ul{
@@ -614,15 +617,15 @@ footer::after {
     grid-column: 1/7;
     display: flex;
     flex-direction: row-reverse;
-    transform: rotate(-5deg) translateX(0rem);
+    transform: rotate(-7deg) translateX(0rem);
     justify-content: flex-start;
     align-items: center;
     height: fit-content;
     position: sticky ;
     top:clamp(3.5rem,4vw,11rem) ;
-    margin-block: 20rem 5rem;
+    margin-block: 20rem 8rem;
     /* background-color: unset; */
-    box-shadow: 0rem -13rem 0 5rem white;
+    box-shadow: 0rem -10rem 0 5rem white;
   }
 
   /* white space beside */
@@ -700,22 +703,24 @@ footer::after {
   }
 
   footer{
-    padding-inline: 5rem 8rem;
-    transform: rotate(15deg) translateX(4rem);
-    margin-block-start: 20rem;
+    grid-column: 2/10;
+    padding-inline: 10rem 8rem;
+    transform: rotate(10deg) translateX(4rem);
+    margin-block-start: 40rem;
   }
 
   footer::after {
+    display: none;
     left: 0rem;
-    height: 66vh;
+    height: 80vh;
   }
 
   footer > p:first-child::after{
-  margin-inline-start: -20rem
+  margin-inline-start: -25vw
   }
 
   footer > p:last-child::after{
-    margin-inline-start: -25rem
+    margin-inline-start: -25vw
   }
 
 }
@@ -731,7 +736,36 @@ footer::after {
   h1 > p:first-child::before{
     left: 2rem;
    }
-  
+}
+
+@media screen and (min-width: 1400px) {
+ article {
+  display: grid;
+  /* 1.6rem is margin-inline */
+  grid-template-columns:12vw repeat(8, 1fr) 12vw;
+  gap: 0.8rem;
+  }
+
+  header {
+    transform: rotate(10deg) translateX(0rem) ;
+  }
+
+  h1 > p:first-child::before{
+    left: -10vw;
+   }
+
+  section.bodytext >h2 {
+    /* top:clamp(3.5rem,5.4vw,11rem); */
+    box-shadow: 0rem -13rem 0 6rem white;
+  }
+
+  h2 > .section-number::before{
+    right: -6vw;
+  }
+
+  section.bodytext > h2{
+    transform: rotate(-5deg) translateX(5rem);
+  }
 }
 
 @media print {
@@ -746,10 +780,13 @@ footer::after {
   }
 
   h1 > p:first-child{
-    font-size: clamp(4rem,8vw,10rem);
+    white-space: nowrap;
+    transform: rotate(0deg) translateX(1rem) translateY(-2rem);
+    font-size: clamp(3rem,6vw,6rem);
     width: fit-content;
     text-align: left;
     position: relative;
+    margin-block: 15vw 5rem;
   }
 
     h1 > p:first-child::before{
@@ -767,6 +804,7 @@ footer::after {
     font-size: clamp(1.5rem,4.3vw,6rem);
     transform: rotate(0deg) translateX(1rem) translateY(-2rem);
     background-color: unset;
+    white-space: normal;
   }
 
   h1 > p:nth-child(2)::after{
