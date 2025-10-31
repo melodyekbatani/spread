@@ -124,7 +124,7 @@ input#menu-toggle {
   font-size: 2rem;
   font-family: "Inktrap", "Avenir Next", "futura-pt", sans-serif;
   padding-inline: 3rem 8rem;
-  padding-block: 12rem;
+  padding-block: 14rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -163,10 +163,11 @@ input#menu-toggle {
   background-color: unset;
 }
 
+
 .menu-content > P{
-  font-size: 6rem;
   text-transform: uppercase;
   margin-inline-start: 2rem;
+  font-size: clamp(5rem,15vw,10rem);
 }
 
 .menu-content > P::after{
@@ -182,10 +183,12 @@ input#menu-toggle {
 .menu-content > ul{
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: clamp(2rem,8vw,5rem);
   line-height: 1.3;
   margin-inline-start: 2rem;
 }
+
+
 
 .menu-content > ul > li::after{
   content: "";
@@ -222,7 +225,7 @@ section.intro > p{
 h2 {
   font-family: Inktrap;
   position: relative; 
-  transform: rotate(15deg) translateX(2rem);
+  transform: rotate(10deg) translateX(2rem);
   background-color: white;
   position: sticky ;
   top:5rem ;
@@ -357,7 +360,7 @@ section.bodytext > p.quote {
   grid-column: 2/6;
   font-size: 1.8rem; 
   line-height: 1.45;
-  margin-block: 2rem 3rem;
+  margin-block: 4rem 3rem;
   padding-inline-start: 1rem;
   /* border-left: 0.4rem solid black; */
   /* text-decoration: underline;
@@ -383,7 +386,8 @@ footer{
   /* padding: 4rem 2rem; */
   padding-inline: 3rem 5rem;
   transform: rotate(-15deg) translateX(2rem);
-  margin-block-start: 5rem;
+  margin-block-start: 18rem;
+  position: relative;
 }
 
 footer > p:first-child{
@@ -404,7 +408,7 @@ footer > p:first-child::after{
   position: absolute;
   top: 0;
   left: 0;
-  margin-inline-start: -6rem;
+  margin-inline-start: -8rem;
 }
 
 footer > p:last-child{
@@ -431,11 +435,12 @@ footer > p {
   margin-inline: 1rem;
   font-size: 1.6rem;
 }
+
 footer::after {
   content: "";
   display: block;
   background-color: black;
-  height: 130%;
+  height: 60vh;
   width: 0.6rem;
   margin-inline-end: 1rem;
   position:absolute;
@@ -453,10 +458,10 @@ footer::after {
     h2 {
     font-family: Inktrap;
     position: relative; 
-    transform: rotate(15deg) translateX(2rem);
+    transform: rotate(10deg) translateX(2rem);
     background-color: white;
     position: sticky;
-    top: 6.5rem;
+    top: 6rem;
     margin-block: 18rem 5rem;
     hyphens: auto;
     z-index:2;
@@ -466,13 +471,13 @@ footer::after {
 }
 
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 715px) {
 
   h1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-block-start: 4rem;
+    margin-block-start: 10rem;
     
   }
 
@@ -484,7 +489,7 @@ footer::after {
     position: relative;
   }
 
-    h1 > p:first-child::before{
+  h1 > p:first-child::before{
     content: "";
     display: block;
     background-color: black;
@@ -545,148 +550,176 @@ footer::after {
   position: absolute;
   top: 100%;
   left: -12rem;
-}
+  }
 
   div.date-author {
-    grid-column: 3/10;
+      grid-column: 3/10;
   }
 
   .intro{
-  /* font-size: 3rem; */
-  grid-column: 3/10;
+    /* font-size: 3rem; */
+    grid-column: 3/10;
   }
 
   .menu {
-  width: 8rem;
-  height: 8rem;
-  top: 2rem;
-  left: 2rem;
-  font-size: 1.8rem;
+    width: 8rem;
+    height: 8rem;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .menu-content {
+    font-size: clamp(2rem,3vw,3rem);
+  }
+
+  .menu-content > P{
+    font-size: clamp(8rem,11vw,18rem);
+  }
+
+  .menu-content > P::after{
+    content: "";
+    display: block;
+    background-color: black;
+    height: 0.4rem;
+    width: 150vw;
+    margin-block: 1rem;
+    margin-inline-start: -15rem;
+  }
+
+  .menu-content > ul{
+    gap: clamp(2rem,5vw,5rem);
+  }
+
+
+
+  section.bodytext {
+    grid-column: 3/10;
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap: 0.8rem;
+  }
+
+  section.bodytext > p{
+    grid-column: 1/6;
+  }
+
+  section.bodytext > h2{
+    grid-column: 1/7;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: rotate(-10deg) translateX(0rem);
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    position: sticky ;
+    top:6rem ;
+    margin-block: 19rem 5rem;
+    /* background-color: unset; */
+    box-shadow: 0rem -10rem 0 3rem white;
+  }
+
+  /* white space beside */
+  h2::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: -100%;
+  }
+
+  h2:after {
+    content:"";
+    display: none;
+  }
+
+
+  h2 > .section-number > div:first-child {
+    display: inline-block;
+    line-height: 0.65;
+    padding-block-start: 3rem;
+    height: fit-content;
+    font-size: 8rem;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    position: relative;
+  }
+
+  h2 > .section-number{
+    position: relative;
+    padding-block: 1rem -1rem;
+
+  }
+
+  h2 > .section-number::before {
+    content: "";
+    background-color: black;
+    width: 0.4rem;
+    height: 120vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+  h2 > .section-number > div:nth-child(2) {
+    background-color: rgb(0, 0, 0);
+    flex-shrink: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%; 
+  }
+
+  h2>span {
+    display: block;
+    text-align: right;
+    position: relative;
+    white-space: pre-line;
+  }
+
+
+  h2 > span::after {
+    content: "";
+    margin-inline-start: -60rem;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+  }
+
+  footer{
+    padding-inline: 5rem 8rem;
+    transform: rotate(15deg) translateX(4rem);
+    margin-block-start: 20rem;
+  }
+
+  footer::after {
+    left: 0rem;
+    height: 66vh;
+  }
+
+  footer > p:first-child::after{
+  margin-inline-start: -20rem
+  }
+
+  footer > p:last-child::after{
+    margin-inline-start: -25rem
+  }
+
 }
 
-section.bodytext {
-  display: grid;
-  grid-template-columns:repeat(5, 1fr);
-  gap: 0.8rem;
-  grid-column: 3/9;
-}
 
-h2{
-  display: flex;
-  flex-direction: row-reverse;
-  transform: rotate(-15deg) translateX(8rem);
-  justify-content: center;
-  align-items: center;
-  /* background-color: unset; */
-}
-
-/* white space beside */
-h2::before {
-  content: "";
-  position: absolute;
-  background-color: white;
-  z-index: -1;
-  width: 100vw;
-  height: 100%;
-  top: 0;
-  left: -100%;
-}
-
-h2:after {
-  content:"";
-  display: none;
-}
-
-
-h2 > .section-number > div:first-child {
-  display: inline-block;
-  line-height: 1;
-  padding-block-start: 2rem;
-  height: fit-content;
-  font-size: 8rem;
-  text-decoration-color: rgba(0, 0, 0, 0);
-  position: relative;
-}
-
-h2 > .section-number{
-  position: relative;
-  padding-block: 2rem;
-}
-
-h2 > .section-number::before {
-  content: "";
-  background-color: black;
-  width: 0.4rem;
-  height: 350%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-
-h2 > .section-number > div:nth-child(2) {
-  background-color: rgb(0, 0, 0);
-  flex-shrink: 0;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%; 
-}
-
-h2>span {
-  display: block;
-  text-align: right;
-  position: relative;
-  padding-block-end: 1rem;
-}
-
-h2 > span::after {
-  margin-inline-start: -20rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
+@media screen and (min-width: 800px) {
+  h1 > p:nth-child(2){
+    transform: rotate(-90deg) translateY(40rem) ;
+  }
 }
   
 
 
 @media screen and (min-width: 1080px) {
   
-  h1{
-    font-size: 8rem;
-  }
 
-  .intro{
-    font-size: 2.5rem;
-  }
 
-  h2{
-    font-size: 4.8rem;
-    margin-block: 9rem 6rem;
-  }
 
-  section.bodytext p {
-    font-size: 2rem;
-    display: block;
-    grid-column: 2/6;
-}
-
-.menu {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: auto;
-  }
-  /* White space beside the H2 */
-h2::before {
-  content: "";
-  position: absolute;
-  background-color: white;
-  z-index: -1;
-  width: 100vw;
-  height: 200%;
-  top: 100;
-  left: -100%;
-}
-
-}
+} 
