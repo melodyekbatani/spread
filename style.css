@@ -299,7 +299,7 @@ h2 > .section-number::after {
 h2 > span {
   display: block;
   line-height: 1.3;
-  font-size: clamp(2.2rem,3vw,2.8rem); 
+  font-size: clamp(2.5rem,3vw,2.8rem); 
   text-transform: uppercase;
   /* text-decoration: underline; */
   text-underline-offset: 0.7rem;
@@ -619,7 +619,7 @@ footer::after {
     flex-direction: row-reverse;
     transform: rotate(-7deg) translateX(0rem);
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     height: fit-content;
     position: sticky ;
     top:clamp(3.5rem,4vw,11rem) ;
@@ -649,7 +649,7 @@ footer::after {
   h2 > .section-number > div:first-child {
     display: inline-block;
     line-height: 0.65;
-    padding-block-start: 3rem;
+    padding-block-start: 4rem;
     height: fit-content;
     font-size: 8rem;
     text-decoration-color: rgba(0, 0, 0, 0);
@@ -686,6 +686,8 @@ footer::after {
     text-align: right;
     position: relative;
     white-space: pre-line;
+    padding-top: 0rem;
+    background-color: unset;
     /* top: 1rem; */
   }
 
@@ -694,7 +696,7 @@ footer::after {
     content: "";
     margin-inline-start: -90vw;
     position: absolute;
-    bottom: -1rem;
+    bottom: 0rem;
     left: 0;
   }
 
@@ -931,7 +933,7 @@ h2 > span::after {
   height: 0rem;
   width: 0rem;
   margin-block-start: 1rem;
-  margin-inline-start: -10rem;
+  margin-inline-start: 0rem;
 }
 
 h2 > .section-number::after {
