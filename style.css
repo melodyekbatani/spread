@@ -378,6 +378,11 @@ span.outlink{
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.3em;
   transform: rotate(2deg);
+  transition: all 0.2s ease-in-out;
+}
+
+span.outlink:hover{
+  transform: rotate(0deg);
 }
 
 span.noBreak
